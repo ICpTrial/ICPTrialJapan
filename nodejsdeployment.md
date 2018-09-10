@@ -8,7 +8,7 @@
 1. コンソール左上にあるメニューから、「カタログ」を選択します。
 Helmで定義された様々なIBMミドルウェア・ソリューションや、OSSのソリューションがカタログに登録されています。
 デフォルトで表示されているものはIBMのHELMコンテンツ・カタログです。コンテンツ・カタログは進化し続けており、WatsonやBlockChainなど多様なソリューションが含まれるように進化していきます。
-* [参考] コンソール > プラットフォーム > Helmレポジトリを開き、[Google社のHelmレポジトリ](https://kubernetes-charts.storage.googleapis.com)を追加すれば、Google社が提供している多様なOSSのHELMコンテンツも利用できるようになります。これがオープンなテクノロジーで製品が実装されていることのメリットです（ライセンスはそれぞれのコンポーネントごとに別途ご確認ください）。
+* [参考] コンソール > プラットフォーム > Helmレポジトリを開き、[Google社のHelmレポジトリ](https://kubernetes-charts.storage.googleapis.com)を追加すれば、Google社が提供している多様なOSSのHELMコンテンツも利用できるようになります。同様に他社のHELMレポジトリを追加すれば、その会社のソリューションが利用可能になります。これがオープンなテクノロジーで製品が実装されていることのメリットです（ライセンスはそれぞれの製品/コンポーネントごとにご確認ください）。
 1. カタログページの検索ビューに nodejs と入力し、絞り込まれた *ibm-nodejs-sample* をクリックして開きます。
 ![Catalog](https://github.com/ICpTrial/ICPTrialJapan/blob/master/pictures/catalog-nodejs.png)
 1. ibm-nodejs-sample の helm の 説明を確認します（ helmチャートのReadMeがこちらに表示されています ）
