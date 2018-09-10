@@ -37,6 +37,16 @@ HELMには 各ソリューション提供者が決めたデフォルト値が設
 ![NodejsSample](https://github.com/ICpTrial/ICPTrialJapan/blob/master/pictures/nodejssample.png)
 
 ## スケールアウト
+1. この１つだけで稼働する Node.js のインスタンスを スケールアウトしてみましょう。まずこのhelmインスタンスのページで、このインスタンスの「デプロイメント」の名前を確認してください。この図の環境では「nodejsdemo-ibm-nodejs-sa」です（お客様によって値が異なります）。
+1. コンソールのメニューから　ワークロード > デプロイメント を開きます。確認したデプロイメント名で検索をかけてください。
+![NodejsDeployemnt](https://github.com/ICpTrial/ICPTrialJapan/blob/master/pictures/nodejsdeployment.png)
+1. インスタンスの 右にある「アクション」から「スケール」を選択し、インスタンス数を「３」に設定し、「デプロイメントのスケーリング」をクリックします。
+![NodejsScaling](https://github.com/ICpTrial/ICPTrialJapan/blob/master/pictures/nodejsscaling.png)
+1. デプロイメントの「必要数」が「３」に更新され、数十秒程度で「使用可能」なインスタンス数も「３」に増加していきます。
+この増加したデプロイメント・インスタンスへの負荷分散は、Kubernetesで自動的に実施されるようになります。
+![NodejsScaled](https://github.com/ICpTrial/ICPTrialJapan/blob/master/pictures/nodejsscaled.png)
 
 ## 自動リカバリー
-
+1. 現在、デプロイメントのインスタンス数「３」での負荷分散構成になっています。この運用ポリシーを保つように Kubernetesが自動的に稼働していることを確認していきます。デプロイメントのインスタンス名をクリックして、デプロイメントの詳細ページを開きましょう。
+1. デプロイメントの詳細ページの下方に、このデプロイメントに含まれる３つポッドのエントリーがあります。現在はもともと動いていた古い１インスタンスと、先程ふ２つ増えた２インスタンスの計３つで稼働しています。１つのコンテナに障害が発生したことを想定し、どれでもいいので１つ ポッドのインスタンスを削除してみます。
+1. インスタンスが１つ削除され消えますが、即座に別のインスタンスが復旧し、当初の「３」インスタンスでの構成を守るように自動復旧してきます。
