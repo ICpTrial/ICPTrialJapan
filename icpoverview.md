@@ -50,9 +50,10 @@ ICPの管理コンソールを開いて、ICPの全体を確認してみまし�
 ## ワークロード
 
 ワークロードのメニューでは、アプリケーション、構成、サービス、およびポリシーを更新およびモニターすることができます。
-コンテナ/Podの動作を制御する、ReplicaSets、デプロイメント、DaemonSets、StatefulSets、ジョブについては後述します。
 - Helmリリース：使用可能なすべてのHelm リリースのリストを表示します。また、現行の Helm リリースを、使用可能な任意のバージョン変更 (パッチ、マイナー、またはメジャー) にアップグレードしたり、現行 Helm リリースを、以前に構成されたリリースの任意の旧バージョンにロールバックしたり、Helmリリースを削除できます。
 ![HELMrelease](https://github.com/ICpTrial/ICPTrialJapan/blob/master/pictures/helmrelease.png)
+
+## ワークロード（コンテナ/Pod制御）
 
 ### ReplicaSets
 
