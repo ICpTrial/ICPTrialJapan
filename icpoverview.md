@@ -42,7 +42,7 @@ ICPの管理コンソールを開いて、ICPの全体を確認してみまし�
 
 ## カタログ
 
-カタログは、クラスター内のパッケージを参照およびインストールできる、一元化された場所を提供します。HELMと呼ばれるKubernetes環境のパッケージング・
+カタログは、クラスター内のパッケージを参照およびインストールできる、一元化された場所を提供します。Helmと呼ばれるKubernetes環境のパッケージング・
 ツールを利用しています。カタログ内のコンポーネントとして、WebSphere Libertyをはじめ、多様なIBM製品群に対応しています。
 カタログを開くには、コンソール上部にあるメニューから、「カタログ」(Catalog)を選択します。
 ![Catalog](https://github.com/ICpTrial/ICPTrialJapan/blob/master/pictures/catalog.png)
