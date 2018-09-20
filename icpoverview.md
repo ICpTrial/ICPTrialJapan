@@ -40,12 +40,42 @@ ICPの管理コンソールを開いて、ICPの全体を確認してみまし�
   
   - 脆弱性アドバイザー：プライベート・レジストリー内のコンテナー・イメージのセキュリティー状況を取得し、環境内の稼働しているコンテナーに対するセキュリティー検査を実行します。脆弱性アドバイザーの詳細は[脆弱性アドバイザー](https://github.com/ICpTrial/ICPTrialJapan/blob/master/vulnerabilityadvisor.md)を参照ください。
 
-## HELMカタログ
+## カタログ
+
+カタログは、クラスター内のパッケージを参照およびインストールできる、一元化された場所を提供します。HELMと呼ばれるKubernetes環境のパッケージング・
+ツールを利用しています。カタログ絵は、WebSphere Libertyをはじめ、多様なIBM製品群に対応しています。
+カタログを開くには、コンソール上部にあるメニューから、「カタログ」(Catalog)を選択します。
+![Catalog](https://github.com/ICpTrial/ICPTrialJapan/blob/master/pictures/catalog.png)
 
 ## ワークロード
 
+ワークロードのメニューでは、アプリケーション、構成、サービス、およびポリシーを更新およびモニターすることができます。
+コンテナ/Podの動作を制御する、ReplicaSets、デプロイメント、DaemonSets、StatefulSets、ジョブについては後述します。
+- Helmリリース：使用可能なすべてのHelm リリースのリストを表示します。また、現行の Helm リリースを、使用可能な任意のバージョン変更 (パッチ、マイナー、またはメジャー) にアップグレードしたり、現行 Helm リリースを、以前に構成されたリリースの任意の旧バージョンにロールバックしたり、Helmリリースを削除できます。
+![HELMrelease](https://github.com/ICpTrial/ICPTrialJapan/blob/master/pictures/helmrelease.png)
+
+### ReplicaSets
+
+Podのレプリカを生成し、指定した数のPodを維持し続けるReplicaSetの設定を行います。
+指定されるレプリカ数よりも少ない場合はPodが自動で追加され、またPodが多い場合は自動で削除するオートヒーリングが実現できます。これらの設定の確認および作成、変更、削除が可能です。
+![ReplicaSets](https://github.com/ICpTrial/ICPTrialJapan/blob/master/pictures/replicasets.png)
+
 ### デプロイメント
 
-### ステートフルセット
+デプロイメントはReplicaSetの新しいバージョンをリリースするための仕組みです。ReplicaSetがPodを管理するように、デプロイメントはReplicaSetを管理しています。デプロイメントはローリングアップデートやロールバックといったデプロイ管理の仕組みを提供するものです。新規のPodが含まれるReplicaSetへ入れ替える際、新旧の全体Pod数を調整しながら新しい仕様のPodに置き換えていく仕組みです。
+![Deployment](https://github.com/ICpTrial/ICPTrialJapan/blob/master/pictures/deployment.png)
 
-## 
+### DaemonSets
+
+全てのノードへ1Podずつ配置する仕組みで、ログ収集用のPodなど、全ノード、もしくは複数のノード上で必ず動作している必要のあるプロセスのために利用されることが多いDaemonSetの設定を行います。
+![DaemonSets](https://github.com/ICpTrial/ICPTrialJapan/blob/master/pictures/daemonsets.png)
+
+### StatefulSets
+
+ネットワークおよびストレージのIDが保証されるPodを配置し、データベースなどstatefulなワークロードに対応するための仕組みとなるステートフルセットの設定を行います。
+![StatefulSets](https://github.com/ICpTrial/ICPTrialJapan/blob/master/pictures/statefulsets.png)
+
+### ジョブ
+
+コンテナを利用して一度限りの処理を実行させる仕組みのジョブの設定を行います。指定した回数までコンテナの実行（正常終了）が保証されるリソースです。
+![Job](https://github.com/ICpTrial/ICPTrialJapan/blob/master/pictures/job.png)
