@@ -1,24 +1,24 @@
 #Availability Zones - Change it
 variable "azs" {
    type        = "list"
-   description = "インスタンスがデプロイされるAvailability Zoneのリスト"
+   description = "Availability Zone list"
    default     = [ "ap-northeast-1a", "ap-northeast-1c" ]
 }
 
 # AWS KeyName - Change it
 variable "KeyPair_Name" {
-   description  = "AWS キー・ペアの名前"
+   description  = "AWS Key pair name"
    default = "" 
 }
 
 variable "Public_SSHKey" {
-   description  = "公開鍵を指定します"
+   description  = "specify public key"
    default = "" 
 }
 
 #Subnets - Change it
 variable "Aws_Subnet" {
-    description = "デプロイ先のサブネット"
+    description = "subnet"
     default     = [ "subnet-xxxxxxx", "subnet-xxxxxx" ]
 }
 
@@ -28,7 +28,7 @@ variable "SecurityGroupID" {
 }
 
 variable "InstanceType" {
-    description = "払出し先のインスタンスタイプ"
+    description = "instance type"
     default     = "t2.micro"
 }
 
