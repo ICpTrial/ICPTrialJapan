@@ -69,7 +69,7 @@ cat << EOFF > /var/www/html/index.html
 <body>
 <h1>Welcome to my Web Page</h1>
 <hr/>
-<p>MY IP:$myIP </p>
+<p>MY IP is :$myIP </p>
 <hr/>
 </body>
 </html>
